@@ -1,9 +1,17 @@
 package com.mercadolivro.model
 
+import javax.persistence.*
+
+@Entity(name = "customer")
 data class CustomerModel(
-    var id: String? = null,
 
-    var name: String,
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        var id: Int? = null,
 
-    var email: String
+        @Column
+        var name: String,
+
+        @Column
+        var email: String
 )

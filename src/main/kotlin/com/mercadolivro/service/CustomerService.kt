@@ -9,7 +9,7 @@ class CustomerService(
         val customerRepository: CustomerRepository
 ) {
 
-    fun getAll(name: String?): List<CustomerModel> {
+    fun getCustomers(name: String?): List<CustomerModel> {
         name?.let {
             return customerRepository.findByNameContaining(name)
         }
@@ -20,7 +20,7 @@ class CustomerService(
         customerRepository.save(customer)
     }
 
-    fun getCustomer(id: Int): CustomerModel {
+    fun getCustomerById(id: Int): CustomerModel {
         return customerRepository.findById(id).orElseThrow()
     }
 

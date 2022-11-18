@@ -6,7 +6,8 @@ import org.springframework.stereotype.Service
 
 @Service
 class CustomerService(
-        val customerRepository: CustomerRepository
+        val customerRepository: CustomerRepository,
+        val bookService: BookService
 ) {
 
     fun getCustomers(name: String?): List<CustomerModel> {
@@ -35,9 +36,8 @@ class CustomerService(
 
     fun delete(id: Int) {
 
-        if (!customerRepository.existsById(id)) {
-            throw Exception()
-        }
+        val customer = getCustomerById(id)
+        bookService.deleteBookByCustomer(customer)
 
         customerRepository.deleteById(id)
     }

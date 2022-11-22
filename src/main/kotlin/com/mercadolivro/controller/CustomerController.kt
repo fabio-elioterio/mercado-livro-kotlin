@@ -6,6 +6,9 @@ import com.mercadolivro.controller.response.CustomerResponse
 import com.mercadolivro.extension.toCustomerModel
 import com.mercadolivro.extension.toCustomerResponse
 import com.mercadolivro.service.CustomerService
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
+import org.springframework.data.web.PageableDefault
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
@@ -16,8 +19,8 @@ class CustomerController(
 ) {
 
     @GetMapping
-    fun getCustomers(@RequestParam name: String?): List<CustomerResponse> {
-        return customerService.getCustomers(name).map { it.toCustomerResponse() }
+    fun getCustomers(@PageableDefault(page = 0, size = 10) pageable: Pageable, @RequestParam name: String?): Page<CustomerResponse> {
+        return customerService.getCustomers(name, pageable).map { it.toCustomerResponse() }
     }
 
     @PostMapping

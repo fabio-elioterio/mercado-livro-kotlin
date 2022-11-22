@@ -3,6 +3,8 @@ package com.mercadolivro.service
 import com.mercadolivro.enums.CustomerStatus
 import com.mercadolivro.model.CustomerModel
 import com.mercadolivro.repository.CustomerRepository
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
 
 @Service
@@ -11,11 +13,11 @@ class CustomerService(
         val bookService: BookService
 ) {
 
-    fun getCustomers(name: String?): List<CustomerModel> {
+    fun getCustomers(name: String?, pageable: Pageable): Page<CustomerModel> {
         name?.let {
-            return customerRepository.findByNameContaining(name)
+            return customerRepository.findByNameContaining(name, pageable)
         }
-        return customerRepository.findAll().toList()
+        return customerRepository.findAll(pageable)
     }
 
     fun create(customer: CustomerModel) {

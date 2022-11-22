@@ -37,7 +37,7 @@ class CustomerController(
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)      // Status 204 - No Content it's used when the request is processed successfully but there's no data response.
-    fun update(@PathVariable id: Int, @RequestBody customer: PutCustomerRequest) {
+    fun update(@PathVariable id: Int, @RequestBody @Valid customer: PutCustomerRequest) {
         val customerSaved = customerService.getCustomerById(id)
         customerService.update(customer.toCustomerModel(customerSaved))
     }

@@ -53,4 +53,16 @@ class ControllerAdvice {
         return ResponseEntity(argumentNotValidResponse, HttpStatus.UNPROCESSABLE_ENTITY)
     }
 
+    @ExceptionHandler(BookNotAvailableException::class)
+    fun handleBookNotAvailableException(ex: BookNotAvailableException, request: WebRequest): ResponseEntity<ErrorResponse> {
+        val bookNotAvailableException = ErrorResponse(
+                HttpStatus.UNPROCESSABLE_ENTITY.value(),
+                ex.message,
+                ex.errorCode,
+                null
+        )
+
+        return ResponseEntity(bookNotAvailableException, HttpStatus.UNPROCESSABLE_ENTITY)
+    }
+
 }

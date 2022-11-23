@@ -19,7 +19,7 @@ data class PurchaseModel(
         @JoinTable(name = "purchase_book",
                 joinColumns = [JoinColumn(name = "purchase_id")],
                 inverseJoinColumns = [JoinColumn(name = "book_id")])
-        val books: List<BookModel>,
+        val books: MutableList<BookModel>,
 
         @Column
         val nfe: String? = null,

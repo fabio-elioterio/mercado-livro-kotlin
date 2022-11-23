@@ -51,6 +51,6 @@ class CustomerService(
     }
 
     fun emailAvailable(email: String): Boolean {
-       return !customerRepository.existsByEmail(email)
+        return !customerRepository.existsByEmail(email)
     }
 }

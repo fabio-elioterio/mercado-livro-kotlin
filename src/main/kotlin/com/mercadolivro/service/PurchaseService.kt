@@ -7,6 +7,8 @@ import com.mercadolivro.exception.BookNotAvailableException
 import com.mercadolivro.model.PurchaseModel
 import com.mercadolivro.repository.PurchaseRepository
 import org.springframework.context.ApplicationEventPublisher
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
 
 @Service
@@ -28,6 +30,10 @@ class PurchaseService(
 
     fun update(purchaseModel: PurchaseModel) {
         purchaseRepository.save(purchaseModel)
+    }
+
+    fun getCustomerPurchases(customerId: Int, pageable: Pageable): Page<PurchaseModel> {
+        return purchaseRepository.findPurchaseByCustomerId(customerId, pageable)
     }
 
 }

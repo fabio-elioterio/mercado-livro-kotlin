@@ -13,8 +13,8 @@ import org.springframework.stereotype.Service
 
 @Service
 class CustomerService(
-        val customerRepository: CustomerRepository,
-        val bookService: BookService,
+        private val customerRepository: CustomerRepository,
+        private val bookService: BookService,
         private val bCryptPasswordEncoder: BCryptPasswordEncoder
 ) {
 

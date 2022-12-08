@@ -3,8 +3,10 @@ package com.mercadolivro.controller
 import com.mercadolivro.controller.request.PostBookRequest
 import com.mercadolivro.controller.request.PutBookRequest
 import com.mercadolivro.controller.response.BookResponse
+import com.mercadolivro.controller.response.PageResponse
 import com.mercadolivro.extension.toBookModel
 import com.mercadolivro.extension.toBookResponse
+import com.mercadolivro.extension.toPageResponse
 import com.mercadolivro.service.BookService
 import com.mercadolivro.service.CustomerService
 import org.springframework.data.domain.Page
@@ -17,8 +19,8 @@ import javax.validation.Valid
 @RestController
 @RequestMapping("books")
 class BookController(
-        private val bookService: BookService,
-        private val customerService: CustomerService
+    private val bookService: BookService,
+    private val customerService: CustomerService
 ) {
 
     @PostMapping
@@ -29,13 +31,13 @@ class BookController(
     }
 
     @GetMapping
-    fun getBooks(@PageableDefault(page = 0, size = 10) pageable: Pageable): Page<BookResponse> {
-        return bookService.getBooks(pageable).map { it.toBookResponse() }
+    fun getBooks(@PageableDefault(page = 0, size = 10) pageable: Pageable): PageResponse<BookResponse> {
+        return bookService.getBooks(pageable).map { it.toBookResponse() }.toPageResponse()
     }
 
     @GetMapping("/active")
     fun getActives(@PageableDefault(page = 0, size = 10) pageable: Pageable): Page<BookResponse> =
-            bookService.getActives(pageable).map { it.toBookResponse() }
+        bookService.getActives(pageable).map { it.toBookResponse() }
 
     @GetMapping("/{id}")
     fun getBookById(@PathVariable id: Int): BookResponse {

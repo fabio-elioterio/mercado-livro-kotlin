@@ -2,7 +2,6 @@
 A public study project using the Kotlin programming language.
 
 ## Table of contents
-* [What are you going to see here?](#what-are-you-going-to-see-here?)
 * [Technologies](#technologies)
 * [Setup](#setup)
 

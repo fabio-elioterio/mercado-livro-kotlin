@@ -1,6 +1,12 @@
 # mercado-livro-kotlin
 A public study project using the Kotlin programming language.
 
+## Table of contents
+* [What are you going to see here?](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+
+
 ## What are you going to see here?
 * Extension Function
 * REST API concepts
@@ -15,5 +21,6 @@ Project is created with:
 * Spring Security
 * MySql
 
+## Setup
 
 

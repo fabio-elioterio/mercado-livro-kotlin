@@ -30,7 +30,7 @@ Project was created with:
 2 - Follow the next steps to clone the project:
 * Clone the project in a folder of your preference:
 ```
-$ git clone 
+$ git clone https://github.com/fabio-elioterio/mercado-livro-kotlin.git
 
 ```
 * Go to the project folder:

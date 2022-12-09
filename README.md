@@ -11,7 +11,7 @@ A public study project using the Kotlin programming language.
 ## Technologies
 Project is created with:
 * Kotlin
-* SpringBoot
+* SpringBoot 2.6.6
 * Spring Security
 * MySql
 

@@ -1,2 +1,20 @@
 # mercado-livro-kotlin
-Projeto de estudo com a linguagem Kotlin
+
+## A public study project using the Kotling programming language.
+
+## What are you going to see here?
+* Extension Function
+* REST API concepts
+* Annotation
+* Role
+* Assync Events
+
+## Technologies
+Project is created with:
+* Kotlin
+* SpringBoot
+* Spring Security
+* MySql
+
+
+

@@ -28,7 +28,7 @@ Project was created with:
 * Using SdkMan: https://sdkman.io/install (I love to use SdkMan!)
 
 2 - Follow the next steps to clone the project:
-* Clone the projetc in a folder of your preference:
+* Clone the project in a folder of your preference:
 ```
 $ git clone 
 

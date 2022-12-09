@@ -1,6 +1,5 @@
 # mercado-livro-kotlin
-
-## A public study project using the Kotling programming language.
+A public study project using the Kotling programming language.
 
 ## What are you going to see here?
 * Extension Function

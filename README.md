@@ -43,7 +43,9 @@ $ cd mercado-livro
 $ git status 
 
 ```
-3 - Open the project in IntelliJ and run it
+3 - Install MySql & configure it
 
-4 - Once with the API up, you can access the swegger application and see all the methods and how to use them. Swegger route: http://localhost:8080/swagger-ui/index.html#/
+4 - Open the project in IntelliJ and run it
+
+5 - Once with the API up, you can access the swegger application and see all the methods and how to use them. Swegger route: http://localhost:8080/swagger-ui/index.html#/
 

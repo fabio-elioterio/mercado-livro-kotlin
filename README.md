@@ -43,7 +43,8 @@ $ cd mercado-livro
 $ git status 
 
 ```
-3 - Install MySql & configure it
+3 - Install MySql & configure it. You can follow this guide: https://www.youtube.com/watch?v=DKMrVxtJyUk
+* You need to set your database user name and password in application.properties file
 
 4 - Open the project in IntelliJ and run it
 

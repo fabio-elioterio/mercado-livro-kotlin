@@ -1,4 +1,4 @@
-# mercado-livro-kotlin
+# Mercado Livro Project
 A public study project using the Kotlin programming language. The main purpose of this application is to use it to create automated tests for API with any framework or programming language, such as: Pyhton, Rest Assured with Java and Cucumber, Rest Assured with Kotlin, Robot Framework, etc. 
 
 ## Table of contents
